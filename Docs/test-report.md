@@ -58,4 +58,4 @@ The Smart Traffic System was tested in a local development environment using Fir
 *   **Audio**: Web Audio API requires user interaction (click) to start on some browsers.
 
 ## 5. Conclusion
-The prototype is fully functional and meets the core requirements of the IDP. All critical paths (Horn -> Radar, Ambulance -> Signal, Admin -> Monitor) are operational.
+The prototype is fully functional and meets the core requirements of the mini project. All critical paths (Horn -> Radar, Ambulance -> Signal, Admin -> Monitor) are operational.

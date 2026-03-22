@@ -4,13 +4,13 @@ import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 
 export const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID,
-    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDummyKeyForLocalDevelopment123456789",
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "localhost",
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "smart-traffic-demo",
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "smart-traffic-demo.appspot.com",
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "123456789",
+    appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:123456789:web:abcdef123456",
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-MEASUREMENT"
 };
 
 // Initialize Firebase
@@ -19,11 +19,28 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 const functions = getFunctions(app);
 
-// Connect to emulators if in development mode
+// Connect to emulators if in development mode (optional - will use live Firebase if emulators not running)
 if (location.hostname === "localhost") {
-    connectFirestoreEmulator(db, 'localhost', 8080);
-    connectAuthEmulator(auth, "http://localhost:9099");
-    connectFunctionsEmulator(functions, "localhost", 5001);
+    try {
+        connectFirestoreEmulator(db, 'localhost', 8080);
+        console.log('Connected to Firestore emulator');
+    } catch (e) {
+        console.log('Firestore emulator not available, using live Firebase');
+    }
+
+    try {
+        connectAuthEmulator(auth, "http://localhost:9099");
+        console.log('Connected to Auth emulator');
+    } catch (e) {
+        console.log('Auth emulator not available, using live Firebase');
+    }
+
+    try {
+        connectFunctionsEmulator(functions, "localhost", 5001);
+        console.log('Connected to Functions emulator');
+    } catch (e) {
+        console.log('Functions emulator not available, using live Firebase');
+    }
 }
 
 export { app, db, auth, functions };

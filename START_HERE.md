@@ -10,7 +10,7 @@
 ## 📦 First Time Setup
 
 ### 1. Install Dependencies
-Open a terminal in the project root (`d:/Programs/Projects/idp`) and run:
+Open a terminal in the project root (`d:/Programs/Projects/Mini Project`) and run:
 
 ```bash
 npm install

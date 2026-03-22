@@ -181,7 +181,7 @@ VITE_GOOGLE_MAPS_KEY=your_maps_key
 
 This project is submitted under:
 
-**Inter-Disciplinary Project (IDP)**  
+**mini project (mini project)**  
 Department of CSE, Adamas University
 
 ---
@@ -218,6 +218,6 @@ For research collaboration or technical inquiries:
 
 ---
 
-Made with ❤️ for saving lives | © 2025 Shounak Chatterjee
+Made with ❤️ for saving lives | © 2026 Shounak Chatterjee
 
 </div>
