@@ -129,9 +129,9 @@ Finally, we acknowledge the open-source community and the developers of Firebase
 
 ---
 
-# CHAPTER 1: INTRODUCTION
+# Introduction
 
-## 1.1 Background and Motivation
+## Background and Motivation
 
 In the rapidly urbanizing landscape of modern India, traffic congestion has emerged as one of the most critical challenges affecting public health, economic productivity, and quality of life. According to the Ministry of Road Transport and Highways (2024), Indian cities lose approximately ₹1.47 lakh crores annually due to traffic congestion. However, the most devastating impact of traffic mismanagement manifests in the realm of emergency medical services.
 
@@ -149,7 +149,7 @@ The motivation for this project stems from three key observations:
 
 ---
 
-## 1.2 The Urban Mobility Crisis
+## The Urban Mobility Crisis
 
 India's urban population is projected to reach 600 million by 2031, with vehicular density in major cities increasing at an unprecedented rate. Delhi alone has over 12 million registered vehicles competing for limited road space, resulting in average speeds of 8-12 km/h during peak hours.
 
@@ -202,7 +202,7 @@ A study conducted by the Indian Institute of Technology, Delhi (2023) found that
 
 ---
 
-## 1.3 The Acoustic Environment Crisis
+## The Acoustic Environment Crisis
 
 Vehicle horns have become a ubiquitous feature of Indian roads, with studies showing that drivers in metropolitan areas use horns an average of 15-20 times per kilometer. This creates a severe acoustic pollution crisis with far-reaching health and social consequences.
 
@@ -251,7 +251,7 @@ This approach reduces noise pollution to **zero** while improving reaction time 
 
 ---
 
-## 1.4 Problem Statement
+## Problem Statement
 
 ### Primary Problem
 
@@ -304,7 +304,7 @@ We can achieve:
 
 ---
 
-## 1.5 Project Objectives
+## Project Objectives
 
 ### Primary Objectives
 
@@ -399,7 +399,7 @@ We can achieve:
 
 ---
 
-## 1.6 Scope of the Project
+## Scope of the Project
 
 ### In-Scope
 
@@ -552,7 +552,7 @@ We can achieve:
 6. **Source Code Repository** (GitHub with MIT license)
 7. **Presentation** (PowerPoint/PDF, 20-30 slides)
 
-### 1.7 Project Team Structure
+### Project Team Structure
 
 To execute the deliverables effectively, our six-member team is divided into two specialized groups based on CSE expertise, each owning a clearly defined portion of the project.
 
@@ -625,12 +625,65 @@ These members handle the essential non-coding parts of the project, such as hard
 
 ---
 
+
+## Implementation Status
+
+This section provides a transparent overview of the current development state of the project, distinguishing between features that are **fully implemented** (Phase 1) and those **planned for future integration** (Phase 2).
+
+### Phase 1 â€” Completed (March 2026)
+
+The following components have been fully built, tested, and validated:
+
+| # | Component | Status | Notes |
+|---|-----------|--------|-------|
+| 1 | Firebase Firestore real-time database | âœ… Done | Vehicles, ambulances, signals, horn events |
+| 2 | Firebase Cloud Functions (backend logic) | âœ… Done | Signal preemption, route notifications |
+| 3 | Firebase Authentication (Admin access) | âœ… Done | Secure admin login |
+| 4 | Driver Radar App (React + Vite) | âœ… Done | 360Â° radar, horn button, spatial audio |
+| 5 | Spatial audio engine (Web Audio API + HRTF) | âœ… Done | 3D directional horn alerts via headphones |
+| 6 | Ambulance Navigation App | âœ… Done | OSRM routing, signal detection, clearance broadcast |
+| 7 | Automatic signal preemption algorithm | âœ… Done | 500m geofencing, 30â€“45s pre-green |
+| 8 | Admin Dashboard | âœ… Done | Live map, manual signal override, road lockdown |
+| 9 | Vehicle Simulator (20â€“50 ghost vehicles) | âœ… Done | Realistic movement using Haversine formula |
+| 10 | Horn event broadcasting | âœ… Done | <200ms latency via Firestore |
+| 11 | Hardware: Raspberry Pi + NEO-6M GPS assembly | âœ… Done | Ambulance onboard prototype |
+| 12 | Hardware: ESP32 with BLE/Ultrasonic/IR sensors | âœ… Done | V2V prototype (optional module) |
+
+**Key Validated Metrics (Phase 1):**
+- System latency: **320ms average** (target: <500ms âœ…)
+- Signal preemption accuracy: **97%** (target: â‰¥95% âœ…)
+- Ambulance transit time reduction: **33.5%** (target: â‰¥30% âœ…)
+- Concurrent users handled: **12,500** (target: 10,000+ âœ…)
+
+---
+
+### Phase 2 â€” Planned (Future Work)
+
+The following features are **not yet implemented** and are planned as the next development phase. The centerpiece of Phase 2 is **AI-powered live traffic camera integration**.
+
+| # | Component | Status | Why Not Done Yet |
+|---|-----------|--------|-----------------|
+| 1 | Live traffic camera feed integration (CCTV) | ðŸ”² Planned | Requires government/ISP camera API access |
+| 2 | YOLOv8 AI model for real-time vehicle detection | ðŸ”² Planned | Needs GPU infrastructure and training data |
+| 3 | AI-based road congestion detection | ðŸ”² Planned | Depends on camera integration (#1) |
+| 4 | Accident detection from camera feeds | ðŸ”² Planned | Requires labeled accident dataset |
+| 5 | AI-based emergency vehicle spotting from CCTV | ðŸ”² Planned | Requires ambulance detection model |
+| 6 | AI-enhanced route optimization using congestion data | ðŸ”² Planned | Depends on congestion detection (#3) |
+| 7 | MQTT integration for physical traffic signal hardware | ðŸ”² Planned | Requires government partnership |
+| 8 | Hospital bed availability API | ðŸ”² Planned | Healthcare system API access needed |
+| 9 | Offline BLE V2V mode (without internet) | ðŸ”² Planned | Additional testing and firmware work |
+| 10 | Multi-city cloud deployment | ðŸ”² Planned | Scale-testing and operations planning |
+
+> **Note:** The entire software and hardware stack built in Phase 1 is architected to accommodate Phase 2 additions without a redesign. The AI module will feed congestion data directly into the existing Firebase database, and the routing service already has hooks for congestion-aware re-routing.
+
+---
+
 **End of Chapter 1**
-# CHAPTER 2: LITERATURE REVIEW
+# Literature Review
 
-## 2.1 Evolution of Traffic Management Systems
+## Evolution of Traffic Management Systems
 
-### 2.1.1 Early Traffic Control (1868-1950)
+### Early Traffic Control (1868-1950)
 
 The first traffic signal was installed in London in 1868, using gas-lit red and green lamps operated manually by a police officer. The evolution of traffic management can be categorized into distinct phases:
 
@@ -658,7 +711,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 - Vehicle-to-Infrastructure (V2I) communication
 - Smart city initiatives
 
-### 2.1.2 Modern Traffic Management Architectures
+### Modern Traffic Management Architectures
 
 **Centralized Systems:**
 - **SCATS (Australia)**: Used in 27 countries, processes data from loop detectors to optimize signal timing
@@ -675,7 +728,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 3. **Maintenance Overhead**: Induction loops fail frequently, require road excavation
 4. **Limited Scalability**: Centralized systems struggle with city-wide deployment
 
-### 2.1.3 Relevant Research
+### Relevant Research
 
 | Study | Year | Key Findings | Limitations |
 |-------|------|--------------|-------------|
@@ -686,9 +739,9 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 
 ---
 
-## 2.2 Emergency Vehicle Priority: Historical Context
+## Emergency Vehicle Priority: Historical Context
 
-### 2.2.1 Evolution of Emergency Vehicle Preemption
+### Evolution of Emergency Vehicle Preemption
 
 **1960s: Acoustic Sirens**
 - First electronic sirens (110-120 dB)
@@ -717,7 +770,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 - **Accuracy**: 85-95%
 - **Limitation**: Requires internet connectivity, higher latency (1-3 seconds)
 
-### 2.2.2 Case Studies
+### Case Studies
 
 **Case Study 1: Opticom System (3M, USA)**
 - **Deployment**: 10,000+ intersections across North America
@@ -740,7 +793,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 - **Cost**: ₹30,000/month per officer (salary + training)
 - **Drawback**: Not scalable, human reaction time delays (5-10 seconds)
 
-### 2.2.3 Research Gaps in Emergency Vehicle Priority
+### Research Gaps in Emergency Vehicle Priority
 
 1. **Lack of Hornless Communication**: All existing systems rely on acoustic sirens (85-120 dB)
 2. **No Driver Awareness Systems**: Drivers are not notified in advance of approaching emergency vehicles
@@ -750,9 +803,9 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 
 ---
 
-## 2.3 Evolution of Object Detection Algorithms
+## Evolution of Object Detection Algorithms
 
-### 2.3.1 Traditional Computer Vision (1990-2010)
+### Traditional Computer Vision (1990-2010)
 
 **Haar Cascades (Viola-Jones, 2001)**
 - **Principle**: AdaBoost classifier with Haar-like features
@@ -766,7 +819,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 - **Accuracy**: 85-90% on INRIA dataset
 - **Limitation**: Slow (2-5 FPS), requires manual feature engineering
 
-### 2.3.2 Deep Learning Era (2012-Present)
+### Deep Learning Era (2012-Present)
 
 **R-CNN Family (2014-2017)**
 - **R-CNN (Girshick, 2014)**: Region proposals + CNN classification
@@ -806,7 +859,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
   - Accuracy: 53.9% mAP (COCO)
   - **Use in Our Project**: Potential future enhancement for CCTV-based traffic density analysis
 
-### 2.3.3 Application to Traffic Management
+### Application to Traffic Management
 
 | Algorithm | Use Case | Accuracy | Speed | Deployment Cost |
 |-----------|----------|----------|-------|-----------------|
@@ -820,9 +873,9 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 
 ---
 
-## 2.4 Vehicle-to-Vehicle (V2V) Communication
+## Vehicle-to-Vehicle (V2V) Communication
 
-### 2.4.1 Communication Technologies
+### Communication Technologies
 
 **DSRC (Dedicated Short-Range Communications)**
 - **Frequency**: 5.9 GHz (ITS band)
@@ -861,7 +914,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 - **Limitation**: Low data rate, not suitable for real-time applications
 - **Potential Use**: Rural ambulance tracking
 
-### 2.4.2 V2V Communication Protocols
+### V2V Communication Protocols
 
 **SAE J2735 (DSRC Message Set Standard)**
 - **BSM (Basic Safety Message)**: Position, speed, heading (10 Hz)
@@ -890,7 +943,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 - **Limitation**: Requires internet connectivity (4G/5G)
 - **Latency**: 200-500ms (acceptable for our use case)
 
-### 2.4.3 Relevant V2V Research
+### Relevant V2V Research
 
 | Study | Year | Technology | Key Findings |
 |-------|------|------------|--------------|
@@ -903,9 +956,9 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 
 ---
 
-## 2.5 Research Gaps
+## Research Gaps
 
-### 2.5.1 Identified Gaps in Literature
+### Identified Gaps in Literature
 
 1. **Lack of Integrated Solutions**
    - Existing systems address either signal preemption OR V2V communication, not both
@@ -936,7 +989,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
    - Psychoacoustic principles not applied to traffic safety
    - Web Audio API capabilities unexplored for automotive applications
 
-### 2.5.2 How Our Project Addresses These Gaps
+### How Our Project Addresses These Gaps
 
 | Gap | Our Solution | Innovation |
 |-----|--------------|------------|
@@ -947,7 +1000,7 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 | **Driver Awareness** | 360° radar display with 500m advance warning | Real-time situational awareness |
 | **Spatial Audio** | Web Audio API (HRTF) for directional alerts | Novel application of psychoacoustics |
 
-### 2.5.3 Novelty of Our Approach
+### Novelty of Our Approach
 
 1. **Hornless Communication**: First system to completely eliminate acoustic horns while maintaining (and improving) alert effectiveness
 
@@ -964,11 +1017,10 @@ The first traffic signal was installed in London in 1868, using gas-lit red and 
 ---
 
 **End of Chapter 2**
-# CHAPTERS 3-10: COMPLETE PROJECT REPORT
 
-## CHAPTER 3: THEORETICAL BACKGROUND
+# Theoretical Background
 
-### 3.1 Artificial Neural Networks and Deep Learning
+## Artificial Neural Networks and Deep Learning
 
 Artificial Neural Networks (ANNs) are computational models inspired by biological neural networks in the human brain. They consist of interconnected nodes (neurons) organized in layers that process information through weighted connections.
 
@@ -998,7 +1050,7 @@ Where:
 
 ---
 
-### 3.2 Convolutional Neural Networks (CNN)
+## Convolutional Neural Networks (CNN)
 
 CNNs are specialized neural networks designed for processing grid-like data (images, video frames). They use convolution operations to automatically learn spatial hierarchies of features.
 
@@ -1031,7 +1083,7 @@ Input (32×32) → Conv (6 filters) → Pool → Conv (16 filters) → Pool → 
 
 ---
 
-### 3.3 The YOLO Architecture
+## The YOLO Architecture
 
 YOLO (You Only Look Once) revolutionized object detection by treating it as a single regression problem, predicting bounding boxes and class probabilities directly from full images in one evaluation.
 
@@ -1064,7 +1116,7 @@ YOLO (You Only Look Once) revolutionized object detection by treating it as a si
 
 ---
 
-### 3.4 Internet of Things (IoT) and MQTT
+## Internet of Things (IoT) and MQTT
 
 **IoT Architecture**:
 
@@ -1099,7 +1151,7 @@ traffic/events/horn
 
 ---
 
-### 3.5 Psychoacoustics and Spatial Audio
+## Psychoacoustics and Spatial Audio
 
 **Psychoacoustics** is the study of human perception of sound. Key principles applied in our system:
 
@@ -1151,11 +1203,11 @@ panner.setPosition(x, y, z);
 
 ---
 
-## CHAPTER 4: SYSTEM ANALYSIS AND DESIGN
+# System Analysis And Design
 
-### 4.1 Requirement Specification
+## Requirement Specification
 
-#### 4.1.1 Functional Requirements
+## 4.1.1 Functional Requirements
 
 **FR1: Real-Time Vehicle Tracking**
 - FR1.1: System shall track vehicle GPS coordinates with ±5m accuracy
@@ -1187,7 +1239,7 @@ panner.setPosition(x, y, z);
 - FR5.3: Admin shall create road lockdowns by selecting 2 points
 - FR5.4: System shall log all events for audit trail
 
-#### 4.1.2 Non-Functional Requirements
+## 4.1.2 Non-Functional Requirements
 
 **NFR1: Performance**
 - System latency: <500ms for real-time updates
@@ -1218,9 +1270,9 @@ panner.setPosition(x, y, z);
 
 ---
 
-### 4.2 Feasibility Study
+## Feasibility Study
 
-#### 4.2.1 Technical Feasibility
+## 4.2.1 Technical Feasibility
 
 **Hardware:**
 - ✅ Raspberry Pi 4B: Widely available (₹4,500-₹6,000)
@@ -1236,7 +1288,7 @@ panner.setPosition(x, y, z);
 
 **Conclusion**: Technically feasible with commercially available components and open-source software.
 
-#### 4.2.2 Economic Feasibility
+## 4.2.2 Economic Feasibility
 
 **Development Costs:**
 | Item | Cost (₹) |
@@ -1265,7 +1317,7 @@ panner.setPosition(x, y, z);
 
 **Conclusion**: Economically feasible and significantly cheaper than alternatives.
 
-#### 4.2.3 Operational Feasibility
+## 4.2.3 Operational Feasibility
 
 **User Adoption:**
 - Drivers: Requires smartphone with internet (90% penetration in urban India)
@@ -1286,9 +1338,9 @@ panner.setPosition(x, y, z);
 
 ---
 
-### 4.3 System Architecture Overview
+## System Architecture Overview
 
-#### 4.3.1 High-Level Architecture
+## 4.3.1 High-Level Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -1315,7 +1367,7 @@ panner.setPosition(x, y, z);
 └──────────────────┴──────────────────┴──────────────────────┘
 ```
 
-#### 4.3.2 Data Flow Architecture
+## 4.3.2 Data Flow Architecture
 
 **Real-Time Vehicle Tracking:**
 ```
@@ -1332,7 +1384,7 @@ Driver App → Firestore (/events/hornEvents) → Nearby Drivers (within 200m)
 Ambulance Location → Cloud Function (detectSignals) → Update Signal Status → Admin Dashboard
 ```
 
-#### 4.3.3 Database Schema (Firestore)
+## 4.3.3 Database Schema (Firestore)
 
 **Collection: `/vehicles/{vehicleId}`**
 ```json
@@ -1392,9 +1444,9 @@ Ambulance Location → Cloud Function (detectSignals) → Update Signal Status �
 
 ---
 
-### 4.4 Data Flow Diagrams
+## Data Flow Diagrams
 
-#### 4.4.1 Level 0 DFD (Context Diagram)
+## 4.4.1 Level 0 DFD (Context Diagram)
 
 ```
                     ┌──────────────┐
@@ -1418,7 +1470,7 @@ Ambulance Location → Cloud Function (detectSignals) → Update Signal Status �
                     └──────────────┘
 ```
 
-#### 4.4.2 Level 1 DFD (System Processes)
+## 4.4.2 Level 1 DFD (System Processes)
 
 ```
 Driver ──┐
@@ -1451,9 +1503,9 @@ Admin ──▶ [7.0 Monitor Traffic] ──▶ Live Map Display
 
 ---
 
-## CHAPTER 5: METHODOLOGY - MODULE 1 (GPS & Signal Preemption)
+# Methodology - Module 1 (Gps & Signal Preemption)
 
-### 5.1 Dataset Collection
+## Dataset Collection
 
 **GPS Trajectory Data:**
 - **Source**: Simulated vehicle movements using VehicleSimulator class
@@ -1476,9 +1528,19 @@ Admin ──▶ [7.0 Monitor Traffic] ──▶ Live Map Display
 
 ---
 
-### 5.2 AI Model Training (Future Enhancement)
+## AI Integration â€” Phase 2 (Planned)
 
-**Note**: Current prototype uses GPS-based tracking. AI models planned for Phase 2.
+**Current Status**: Phase 1 uses GPS-based tracking only. AI/camera integration is the centerpiece of Phase 2 and has NOT yet been implemented.
+
+**What Will Be Added in Phase 2:**
+
+The Phase 2 AI system will use live traffic camera (CCTV) feeds processed by a YOLOv8 deep learning model to add three major capabilities:
+
+1. **Road Congestion Detection** â€” Cameras at key intersections will count vehicles per lane in real time. This data feeds into the ambulance routing algorithm to dynamically select the least-congested path â€” improving on the current OSRM routing which is distance-optimized but not congestion-aware.
+
+2. **Accident Detection & Emergency Alerting** â€” The AI model will detect sudden stopped-vehicle clusters and abnormal traffic patterns indicative of accidents. Detected incidents are automatically logged and escalate an emergency case in the Admin Dashboard.
+
+3. **Emergency Vehicle Detection from CCTV** â€” Ambulances and fire trucks will be detected visually from camera footage, cross-referenced with the GPS tracker to improve location accuracy and validate the "Green Corridor" is clear before the ambulance arrives.
 
 **Proposed Model: YOLOv8 for Vehicle Detection**
 
@@ -1516,7 +1578,7 @@ print(f"mAP50: {metrics.box.map50}")
 
 ---
 
-### 5.3 Geofencing Mathematical Model
+## Geofencing Mathematical Model
 
 **Haversine Formula (Distance Calculation):**
 
@@ -1584,7 +1646,7 @@ function detectSignalsAlongRoute(routeCoordinates, signals) {
 
 ---
 
-### 5.4 Traffic Controller Logic
+## Traffic Controller Logic
 
 **Signal Preemption Algorithm:**
 
@@ -1647,9 +1709,9 @@ function prioritizeAmbulances(ambulances, signal) {
 
 ---
 
-## CHAPTER 6: METHODOLOGY - MODULE 2 (Hornless Communication)
+# Methodology - Module 2 (Hornless Communication)
 
-### 6.1 BLE Protocol Design
+## BLE Protocol Design
 
 **Bluetooth Low Energy (BLE) Characteristics:**
 - **Frequency**: 2.4 GHz ISM band
@@ -1725,7 +1787,7 @@ void triggerHorn(float lat, float lng, uint16_t heading) {
 
 ---
 
-### 6.2 IR Signaling Logic
+## IR Signaling Logic
 
 **Infrared Communication:**
 - **Wavelength**: 940 nm (invisible to human eye)
@@ -1770,7 +1832,7 @@ void sendByte(uint8_t byte) {
 
 ---
 
-### 6.3 Ultrasonic Physics
+## Ultrasonic Physics
 
 **Ultrasonic Distance Measurement:**
 - **Sensor**: HC-SR04
@@ -1815,7 +1877,7 @@ float getDistance() {
 
 ---
 
-### 6.4 Spatial Audio Engine
+## Spatial Audio Engine
 
 **Web Audio API Architecture:**
 
@@ -1918,9 +1980,9 @@ class SpatialAudioController {
 
 ---
 
-## CHAPTER 7: IMPLEMENTATION
+# Implementation
 
-### 7.1 Hardware Specifications
+## Hardware Specifications
 
 **Ambulance Onboard System:**
 
@@ -1947,7 +2009,7 @@ class SpatialAudioController {
 
 ---
 
-### 7.2 Circuit Interfacing
+## Circuit Interfacing
 
 **Raspberry Pi GPIO Connections:**
 
@@ -1997,7 +2059,7 @@ ESP32-DevKitC
 
 ---
 
-### 7.3 Software Environment
+## Software Environment
 
 **Development Stack:**
 
@@ -2109,9 +2171,9 @@ mini project/
 
 ---
 
-## CHAPTER 8: TESTING AND VALIDATION
+# Testing And Validation
 
-### 8.1 Testing Methodology
+## Testing Methodology
 
 **Testing Pyramid:**
 
@@ -2137,7 +2199,7 @@ mini project/
 
 ---
 
-### 8.2 Unit Testing Logs
+## Unit Testing Logs
 
 **Test Suite: mathUtils.js**
 
@@ -2181,7 +2243,7 @@ Total: 7 tests, 7 passed, 0 failed
 
 ---
 
-### 8.3 System Validation
+## System Validation
 
 **Test Case 1: Horn Event Broadcasting**
 
@@ -2223,9 +2285,9 @@ Total: 7 tests, 7 passed, 0 failed
 
 ---
 
-## CHAPTER 9: RESULTS AND ANALYSIS
+# Results And Analysis
 
-### 9.1 Simulation Results
+## Simulation Results
 
 **Scenario 1: Emergency Vehicle Transit Time**
 
@@ -2244,7 +2306,7 @@ Total: 7 tests, 7 passed, 0 failed
 | **Reaction Time** | 5.7s | 2.3s | **59.6%** |
 | **Driver Satisfaction** | 45% | 87% | **93.3%** |
 
-### 9.2 Key Findings
+## Key Findings
 
 1. **Signal Preemption**: Reduced ambulance wait time at intersections by 87%
 2. **Noise Elimination**: 100% reduction in horn-related noise pollution
@@ -2254,9 +2316,9 @@ Total: 7 tests, 7 passed, 0 failed
 
 ---
 
-## CHAPTER 10: CONCLUSION
+# Conclusion
 
-### 10.1 Summary of Achievements
+## Summary of Achievements
 
 This project successfully developed and validated a **Smart Traffic Management & Hornless Vehicle Communication System** that addresses critical gaps in emergency vehicle priority and urban noise pollution. Key achievements include:
 
@@ -2266,7 +2328,7 @@ This project successfully developed and validated a **Smart Traffic Management &
 4. **Cost-Effective**: 95% cheaper than commercial systems (₹2.16 lakhs/year vs. ₹50 crores)
 5. **Open-Source**: Released under MIT license for community adoption
 
-### 10.2 Limitations
+## Limitations
 
 1. **Simulation-Based Testing**: Prototype tested in simulated environment, not real-world traffic
 2. **Internet Dependency**: Requires 4G/5G connectivity for real-time synchronization
@@ -2274,22 +2336,41 @@ This project successfully developed and validated a **Smart Traffic Management &
 4. **Signal Integration**: Physical traffic signal interface not implemented (requires government partnership)
 5. **Vehicle Penetration**: Effectiveness increases with adoption rate (requires 30-40% penetration for optimal results)
 
-### 10.3 Future Work
+## Future Work â€” Phase 2 Roadmap
 
-**Phase 2 Enhancements:**
-1. **AI-Based Congestion Prediction**: YOLOv8 for CCTV-based traffic density analysis
-2. **MQTT Integration**: Physical traffic signal controller interface
-3. **Hospital Integration**: Real-time bed availability and patient triage
-4. **Multi-City Deployment**: Standardized protocols for nationwide rollout
-5. **Offline Mode**: BLE-based V2V communication without internet
+Phase 2 is focused on adding an **AI layer powered by live traffic cameras** to the system. This is the most significant planned enhancement and will elevate the system from a reactive to a predictive platform.
 
-**Research Directions:**
-1. **Reinforcement Learning**: Adaptive signal timing optimization
-2. **5G V2X**: Ultra-low latency communication (<10ms)
-3. **Edge Computing**: On-device AI inference for faster processing
-4. **Blockchain**: Decentralized event logging for audit trails
+#### AI & Camera Integration (Core of Phase 2)
 
-### 10.4 Impact Statement
+**Live Traffic Camera (CCTV) Integration:**
+- Partner with municipal traffic authorities or ISPs to access existing roadside camera streams
+- Deploy a YOLOv8 object detection model at the camera-feed processing layer
+- Detect and classify: cars, trucks, motorcycles, pedestrians, ambulances, fire trucks
+
+**Road Congestion Detection:**
+- Use vehicle-per-lane density computed from camera feeds to generate a real-time congestion heatmap
+- Feed this into the ambulance routing service to replace static OSRM distance routing with dynamic congestion-aware routing
+- Expected improvement: additional 10â€“20% reduction in transit time over Phase 1
+
+**Accident Detection & Emergency Alerts:**
+- Train a detection model on labeled accident datasets (sudden stopped clusters, debris patterns)
+- Automatically create an emergency case in the Admin Dashboard when an accident is detected
+- Cross-alert nearby ambulances and divert them proactively
+
+**AI Emergency Vehicle Spotting:**
+- Detect ambulances and fire trucks in CCTV feeds with >85% mAP accuracy
+- Cross-validate against the GPS tracker for increased location precision
+- Ensure the AI can spot vehicles that have not yet installed the onboard system (passive detection)
+
+#### Additional Phase 2 Items
+1. **MQTT Integration** â€” Physical traffic signal controller interface (requires government partnership)
+2. **Hospital API** â€” Real-time bed availability and patient triage routing
+3. **Multi-City Deployment** â€” Standardized cloud configuration for nationwide rollout
+4. **Offline BLE Mode** â€” V2V communication without internet dependency
+5. **Reinforcement Learning** â€” Adaptive signal timing optimization trained on real traffic data
+6. **5G V2X** â€” Ultra-low latency (<10ms) communication for high-speed ambulance corridors
+
+## Impact Statement
 
 **"No one should die because the ambulance got stuck in traffic."**
 
@@ -2333,17 +2414,17 @@ This project demonstrates that with modern IoT, cloud computing, and psychoacous
 
 ## APPENDICES
 
-### Appendix A: Source Code Repository
+## Appendix A: Source Code Repository
 
 **GitHub**: https://github.com/Shounak-programmer/MiniProject  
 **License**: MIT License  
 **Documentation**: See README.md and START_HERE.md
 
-### Appendix B: Firebase Database Schema
+## Appendix B: Firebase Database Schema
 
 See `Docs/data-model.md` for complete schema documentation.
 
-### Appendix C: API Documentation
+## Appendix C: API Documentation
 
 **OSRM Routing API:**
 ```
@@ -2357,18 +2438,18 @@ Response: GeoJSON with route polyline and turn-by-turn instructions
 - `/signals/{signalId}`: Traffic signal states
 - `/events/hornEvents/{eventId}`: Horn event logs
 
-### Appendix D: Hardware Datasheets
+## Appendix D: Hardware Datasheets
 
 1. **Raspberry Pi 4B**: https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/
 2. **NEO-6M GPS**: https://www.u-blox.com/en/product/neo-6-series
 3. **ESP32-DevKitC**: https://www.espressif.com/en/products/devkits/esp32-devkitc
 4. **HC-SR04 Ultrasonic**: https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
 
-### Appendix E: User Manuals
+## Appendix E: User Manuals
 
 See `Docs/demo-instructions.md` for step-by-step usage guide.
 
-### Appendix F: Test Reports
+## Appendix F: Test Reports
 
 See `Docs/test-report.md` for detailed test results.
 
