@@ -35,6 +35,7 @@ We further declare that we have adhered to all principles of academic honesty an
 3. Joydeep Ghosh (UG/SOET/30/24/016)
 4. Khairun Khatun (UG/SOET/30/24/089)
 5. Safidul Sarkar (UG/SOET/30/24/095)
+6. Arnab Adak (UG/SOET/30/24/086)
 
 **Date:** March 22, 2026  
 **Place:** Kolkata, India
@@ -537,7 +538,7 @@ We can achieve:
 
 4. **Regulatory**: No authority to modify actual traffic infrastructure; prototype uses simulation and proof-of-concept demonstrations
 
-5. **Team Size**: 11-member student team with varying skill levels in IoT, web development, and AI
+5. **Team Size**: 6-member student team composed of roles spanning full-stack, geospatial, frontend, IoT hardware, and system testing.
 
 6. **Testing Environment**: Limited to laboratory and simulated urban scenarios (no real-world ambulance deployment)
 
@@ -550,6 +551,19 @@ We can achieve:
 5. **Demonstration Video** (10-15 minutes)
 6. **Source Code Repository** (GitHub with MIT license)
 7. **Presentation** (PowerPoint/PDF, 20-30 slides)
+
+### 1.7 Project Team Structure
+
+To execute the deliverables effectively, our team is structured into specific roles leveraging varying technical expertise:
+
+| Role | Expertise Level | Key Deliverable |
+|------|-----------------|-----------------|
+| **Lead Full-Stack** | High CSE | Firebase Real-time Sync & Backend |
+| **Geospatial Eng.** | High CSE | Routing & Signal Preemption Logic |
+| **Frontend/Sim** | High CSE | React Apps & Spatial Audio Engine |
+| **UI/UX Designer** | Non-CSE / Creative | Visual Radar & Admin Dashboard Design |
+| **IoT Specialist** | Non-CSE / Hardware | Raspberry Pi & GPS Hardware Assembly |
+| **QA/Researcher** | Non-CSE / Admin | System Testing & Performance Metrics |
 
 ---
 
