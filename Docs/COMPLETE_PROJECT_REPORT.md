@@ -1,4 +1,4 @@
-# SMART TRAFFIC MANAGEMENT & HORNLESS VEHICLE COMMUNICATION SYSTEM
+﻿# SMART TRAFFIC MANAGEMENT & HORNLESS VEHICLE COMMUNICATION SYSTEM
 
 **A PROJECT REPORT**
 
@@ -30,12 +30,12 @@ We further declare that we have adhered to all principles of academic honesty an
 
 **Signatures of the Students:**
 
-1. Shounak Chatterjee (UG/SOET/30/24/103)
-2. Sumit Patra (UG/SOET/30/24/061)
-3. Joydeep Ghosh (UG/SOET/30/24/016)
-4. Khairun Khatun (UG/SOET/30/24/089)
-5. Safidul Sarkar (UG/SOET/30/24/095)
-6. Arnab Adak (UG/SOET/30/24/086)
+1. Shounak Chatterjee (UG/SOET/30/24/103) — Lead Full-Stack Developer *(The Architect)*
+2. Joydeep Ghosh (UG/SOET/30/24/016) — Geospatial & Logic Engineer *(The Navigator)*
+3. Sumit Patra (UG/SOET/30/24/061) — Frontend & Simulation Developer *(The Visualizer)*
+4. Safidul Sarkar (UG/SOET/30/24/095) — UI/UX & Interaction Designer *(The Experience Lead)*
+5. Khairun Khatun (UG/SOET/30/24/089) — IoT Hardware & Integration Specialist *(The Builder)*
+6. Arnab Adak (UG/SOET/30/24/086) — Quality Assurance & Field Researcher *(The Validator)*
 
 **Date:** March 22, 2026  
 **Place:** Kolkata, India 
@@ -554,16 +554,74 @@ We can achieve:
 
 ### 1.7 Project Team Structure
 
-To execute the deliverables effectively, our team is structured into specific roles leveraging varying technical expertise:
+To execute the deliverables effectively, our six-member team is divided into two specialized groups based on CSE expertise, each owning a clearly defined portion of the project.
 
-| Role | Expertise Level | Key Deliverable |
-|------|-----------------|-----------------|
-| **Lead Full-Stack** | High CSE | Firebase Real-time Sync & Backend |
-| **Geospatial Eng.** | High CSE | Routing & Signal Preemption Logic |
-| **Frontend/Sim** | High CSE | React Apps & Spatial Audio Engine |
-| **UI/UX Designer** | Non-CSE / Creative | Visual Radar & Admin Dashboard Design |
-| **IoT Specialist** | Non-CSE / Hardware | Raspberry Pi & GPS Hardware Assembly |
-| **QA/Researcher** | Non-CSE / Admin | System Testing & Performance Metrics |
+---
+
+#### Group A: The Technical Core *(3 Members with CSE Knowledge)*
+
+These members focus on the high-logic portions of the system, including the Firebase backend and the OSRM routing engine.
+
+| # | Member | Roll No. | Role Title | Nickname |
+|---|--------|----------|------------|----------|
+| 1 | Shounak Chatterjee | UG/SOET/30/24/103 | Lead Full-Stack Developer | *The Architect* |
+| 2 | Joydeep Ghosh | UG/SOET/30/24/016 | Geospatial & Logic Engineer | *The Navigator* |
+| 3 | Sumit Patra | UG/SOET/30/24/061 | Frontend & Simulation Developer | *The Visualizer* |
+
+**1. Lead Full-Stack Developer — Shounak Chatterjee *(The Architect)***
+
+- **Primary Tasks:** Setting up the Firebase Firestore database, Cloud Functions, and ensuring all three apps (Driver, Ambulance, Admin) stay synchronized in real-time.
+- **Key Focus:** System latency (keeping it under 500ms) and ensuring "Emergency Mode" triggers correctly across the network.
+
+**2. Geospatial & Logic Engineer — Joydeep Ghosh *(The Navigator)***
+
+- **Primary Tasks:** Implementing the OSRM API for ambulance routing and the "Green Corridor" logic.
+- **Key Focus:** Writing the algorithms to detect which traffic signals are within a 50m radius of the ambulance's path and calculating the ETA for signal preemption.
+
+**3. Frontend & Simulation Developer — Sumit Patra *(The Visualizer)***
+
+- **Primary Tasks:** Building the React/Vite interfaces for the three applications and managing the "Vehicle Simulator" that generates the 20-50 "ghost" vehicles for demos.
+- **Key Focus:** Integrating the Web Audio API for spatial (3D) audio alerts so drivers hear horns from the correct direction.
+
+---
+
+#### Group B: Operations & Research *(3 Members with Limited CSE Knowledge)*
+
+These members handle the essential non-coding parts of the project, such as hardware assembly, UI/UX strategy, and data validation.
+
+| # | Member | Roll No. | Role Title | Nickname |
+|---|--------|----------|------------|----------|
+| 4 | Safidul Sarkar | UG/SOET/30/24/095 | UI/UX & Interaction Designer | *The Experience Lead* |
+| 5 | Khairun Khatun | UG/SOET/30/24/089 | IoT Hardware & Integration Specialist | *The Builder* |
+| 6 | Arnab Adak | UG/SOET/30/24/086 | Quality Assurance & Field Researcher | *The Validator* |
+
+**4. UI/UX & Interaction Designer — Safidul Sarkar *(The Experience Lead)***
+
+- **Primary Tasks:** Designing the "Radar" mental model. Since the goal is to replace sirens, this role ensures visual alerts are "glanceable" and non-distracting for a driver at high speeds.
+- **Key Focus:** Mapping out the user flow for the Admin Dashboard and Ambulance Nav to ensure paramedics can trigger "Clearance" with a single tap.
+
+**5. IoT Hardware & Integration Specialist — Khairun Khatun *(The Builder)***
+
+- **Primary Tasks:** Managing the physical prototype. This involves assembling the Raspberry Pi, NEO-6M GPS modules, and ESP32 microcontrollers.
+- **Key Focus:** Circuit interfacing — ensuring the GPS has a clear line of sight and the hardware remains powered by the vehicle's 12V supply.
+
+**6. Quality Assurance & Field Researcher — Arnab Adak *(The Validator)***
+
+- **Primary Tasks:** Running system validation tests. Manually triggering "horn events" and verifying that the latency meets the target specifications.
+- **Key Focus:** Data collection and report writing. Analyzing the "Transit Time Reduction" metrics (aiming for the 30% target) and documenting the results for the final project report.
+
+---
+
+#### Summary Table
+
+| Role | Member | Group | Key Deliverable |
+|------|--------|-------|-----------------|
+| **Lead Full-Stack Developer** *(The Architect)* | Shounak Chatterjee | A — Technical Core | Firebase Real-time Sync & Backend |
+| **Geospatial & Logic Engineer** *(The Navigator)* | Joydeep Ghosh | A — Technical Core | Routing & Signal Preemption Logic |
+| **Frontend & Simulation Developer** *(The Visualizer)* | Sumit Patra | A — Technical Core | React Apps & Spatial Audio Engine |
+| **UI/UX & Interaction Designer** *(The Experience Lead)* | Safidul Sarkar | B — Operations & Research | Visual Radar Design & User Flows |
+| **IoT Hardware & Integration Specialist** *(The Builder)* | Khairun Khatun | B — Operations & Research | Raspberry Pi & GPS Hardware Assembly |
+| **QA & Field Researcher** *(The Validator)* | Arnab Adak | B — Operations & Research | System Testing & Performance Metrics |
 
 ---
 
@@ -2277,7 +2335,7 @@ This project demonstrates that with modern IoT, cloud computing, and psychoacous
 
 ### Appendix A: Source Code Repository
 
-**GitHub**: https://github.com/Shounak-programmer/idp  
+**GitHub**: https://github.com/Shounak-programmer/MiniProject  
 **License**: MIT License  
 **Documentation**: See README.md and START_HERE.md
 
@@ -2323,5 +2381,5 @@ See `Docs/test-report.md` for detailed test results.
 **Word Count**: ~15,000 words
 
 **Prepared by**: Shounak Chatterjee and Team  
-**Date**: November 27, 2025  
+**Date**: March 22, 2026  
 **Institution**: Adamas University, Kolkata
