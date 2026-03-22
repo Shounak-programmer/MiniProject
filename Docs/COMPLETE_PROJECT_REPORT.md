@@ -38,7 +38,7 @@ We further declare that we have adhered to all principles of academic honesty an
 6. Arnab Adak (UG/SOET/30/24/086)
 
 **Date:** March 22, 2026  
-**Place:** Kolkata, India
+**Place:** Kolkata, India 
 
 ---
 
